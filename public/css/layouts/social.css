@@ -12,6 +12,23 @@
     z-index: 100;
 }
 
+@media (max-width: 768px) {
+    #social {
+        position: fixed;
+        top: auto;
+        transform: none;
+        right: 0;
+        bottom: 0;
+        height: 100px;
+        width: 130px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: 100;
+    }
+}
+
 #social .s-btn {
     height: 65px;
     width: 65px;
@@ -27,6 +44,14 @@
     width: 80px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     z-index: 101;
+}
+@media (max-width: 768px) {
+    #social .s-btn:hover {
+        height: 80px;
+        width: 65px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        z-index: 101;
+    }
 }
 
 #social .s-btn img {

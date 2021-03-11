@@ -6,7 +6,7 @@
     <img alt="Landing" src="{{ asset('images/home/l1.png') }}" class="landing" />
     <img alt="Landing" src="{{ asset('images/home/l2.png') }}" class="landing" />
     <img alt="Landing" src="{{ asset('images/home/l3.png') }}" class="landing" />
-    <div class="offset-1 col-6" id="pr">
+    <div class="offset-1 col-10 col-lg-8 col-xl-6" id="pr">
         <h1><span>ZenoriaMC</span>
             Mini-Jeux à l'ancienne et nouveautés exclusives
         </h1>
