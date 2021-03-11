@@ -1,0 +1,22 @@
+.legal {
+    height: auto;
+    padding-top: var(--menu-h);
+    padding-bottom: 75px;
+}
+
+.legal h1 {
+    color: #48BBE8;
+    font-family: Quicksand-b;
+}
+.legal h2 {
+    color: #505050;
+    font-family: Quicksand-b;
+}
+.legal h3 {
+    color: #505050;
+    font-family: Quicksand-b;
+}
+.legal p {
+    color: #505050;
+    font-family: Quicksand;
+}

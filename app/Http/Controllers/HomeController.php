@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function conditionsgenerales()
+    {
+        return view('legal.conditions-generales');
+    }
+
+    public function mentionslegales()
+    {
+        return view('legal.mentions-legales');
+    }
 }

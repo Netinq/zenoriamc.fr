@@ -76,6 +76,6 @@
     <body class="row">
         {{-- @include('layouts.header') --}}
         @yield('content')
-        {{-- @include('layouts.footer') --}}
+        @include('layouts.footer')
     </body>
 </html>
