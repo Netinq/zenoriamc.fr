@@ -1,0 +1,45 @@
+#social {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 130px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 100;
+}
+
+#social .s-btn {
+    height: 65px;
+    width: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    position: relative;
+}
+
+#social .s-btn:hover {
+    width: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    z-index: 101;
+}
+
+#social .s-btn img {
+    height: auto;
+    width: 30px;
+}
+#social #s-discord img {
+    margin-top: 5px;
+}
+
+#social #s-twitter {
+    background-color: #1DA1F2;
+}
+#social #s-discord {
+    background-color: #7289DA;
+}

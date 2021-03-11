@@ -57,11 +57,13 @@
 
         @hasSection('noMaster') @else
         <link rel="stylesheet" type="text/css" href="{{ asset('css/master.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}">
         @endif
 
         <!-- GENERATE Stylesheet -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/header.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/social.css') }}">
 
             @if($styles ?? null)
             @foreach($styles as $style)
