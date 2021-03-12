@@ -125,3 +125,35 @@ to {
 section {
     margin: 0 !important;
 }
+
+.popup {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+    z-index: 100000;
+    background-color: #fff;
+    border-radius: 15px !important;
+    padding: 50px !important;
+    text-align: center;
+    border: 0 !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.04);
+}
+
+.popup h4 {
+    font-size: 2rem;
+    font-family: Quicksand;
+}
+
+.popup span {
+    font-size: 1rem;
+    font-family: Quicksand;
+    color: #505050;
+}
+
+.error h4 {
+    color: rgb(223, 71, 71);
+}
+.success h4 {
+    color: #4FC8CC;
+}

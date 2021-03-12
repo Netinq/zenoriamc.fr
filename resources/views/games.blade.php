@@ -4,7 +4,7 @@
 @section('content')
 @include('layouts.social')
 <section id="games" class="row">
-    <div class="offset-1 col-10 col-md-5 col-lg-4 col-xl-3" id="desc">
+    <div class="offset-1 col-10 col-md-5 col-lg-4 col-xl-3 order-2 order-md-1" id="desc">
         <div id="desc-box">
             <h2 id="db-h">Smash</h2>
             <p id="db-p">Affrontez votre/vos adversaire(s) lors d'une bataille de PvP pour gagner du territoire.
@@ -18,7 +18,7 @@ Attention… Chaque secondes augmente la progression de la ligne...
             <img alt="Gaming illustration" src="{{asset('images/svg/gaming.svg')}}" id="desc-il"/>
         </div>
     </div>
-    <div class="offset-1 col-10 col-md-4 col-lg-5 col-xl-6" id="img-ct">
+    <div class="offset-1 col-10 col-md-4 col-lg-5 col-xl-6 order-1 order-md-2" id="img-ct">
         <div class="img-g" id="smash">
             <img alt="Smash" src="{{ asset('images/games/smash.png') }}" />
         </div>

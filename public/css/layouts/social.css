@@ -3,13 +3,13 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    height: 130px;
+    height: 195px;
     width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    z-index: 100;
+    z-index: 1000;
 }
 
 @media (max-width: 768px) {
@@ -20,12 +20,12 @@
         right: 0;
         bottom: 0;
         height: 100px;
-        width: 130px;
+        width: 195px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: flex-end;
-        z-index: 100;
+        z-index: 1000;
     }
 }
 
@@ -43,14 +43,14 @@
 #social .s-btn:hover {
     width: 80px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    z-index: 101;
+    z-index: 1001;
 }
 @media (max-width: 768px) {
     #social .s-btn:hover {
         height: 80px;
         width: 65px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-        z-index: 101;
+        z-index: 1001;
     }
 }
 
@@ -67,4 +67,7 @@
 }
 #social #s-discord {
     background-color: #7289DA;
+}
+#social #s-tiktok {
+    background-color: #EE1D52;
 }

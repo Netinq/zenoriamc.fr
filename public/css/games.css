@@ -158,6 +158,7 @@
     }
     #games #img-ct {
         height: 25vh;
+        margin-top: 25px;
     }
     #games {
         padding-bottom: 250px;

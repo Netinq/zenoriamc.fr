@@ -19,7 +19,7 @@ footer {
         left: 0;
         width: calc(100vw - 130px);
         height: 65px;
-        z-index: 1000;
+        z-index: 900;
         display: flex !important;
         flex-direction: row;
         justify-content: flex-start;

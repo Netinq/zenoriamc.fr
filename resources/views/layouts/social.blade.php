@@ -9,4 +9,9 @@
             <img alt="discord" src="{{ asset('images/svg/discord.svg')}}" />
         </div>
     </a>
+    <a href="#">
+        <div class="s-btn" id="s-tiktok" target="_blank">
+            <img alt="tiktok" src="{{ asset('images/svg/tiktok.svg')}}" />
+        </div>
+    </a>
 </div>

@@ -19,12 +19,12 @@
                 </div>
             </a>
             <a href="{{ route('games') }}">
-                <div class="nav-btn">
+                <div class="nav-btn {{ Route::is('games') ? 'nav-btn-select' : '' }}">
                     Nos Jeux
                 </div>
             </a>
-            <a href="#">
-                <div class="nav-btn">
+            <a href="{{ route('assistance.index') }}">
+                <div class="nav-btn {{ Route::is('assistance.index') ? 'nav-btn-select' : '' }}">
                     Assistance
                 </div>
             </a>
@@ -56,7 +56,7 @@
                 Nos Jeux
             </div>
         </a>
-        <a href="#">
+        <a href="{{ route('assistance.index') }}">
             <div class="nav-btn">
                 Assistance
             </div>

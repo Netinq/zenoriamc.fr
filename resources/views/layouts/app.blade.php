@@ -50,9 +50,6 @@
             @else ZenoriaMC Serveur Mini-Jeux 1.15.2 @endif
         </title>
 
-        <!-- STATIC Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/footer.css') }}">
-
         <!-- STATIC Scripts -->
 
         @hasSection('noMaster') @else
@@ -61,16 +58,19 @@
         @endif
 
         <!-- GENERATE Stylesheet -->
+        @if($styles ?? null)
+        @foreach($styles as $style)
+        <link rel="stylesheet" type="text/css"
+        href="{{ asset('css/'.$style.'.css') }}">
+        @endforeach
+        @endif
+
+
+        <!-- STATIC Stylesheet -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/footer.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/header.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts/social.css') }}">
-
-            @if($styles ?? null)
-            @foreach($styles as $style)
-            <link rel="stylesheet" type="text/css"
-            href="{{ asset('css/'.$style.'.css') }}">
-            @endforeach
-        @endif
     </head>
 
     <body class="row">
