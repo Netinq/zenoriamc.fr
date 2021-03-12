@@ -14,11 +14,10 @@ footer {
 
 @media (max-width: 768px) {
     footer {
-        background-color: rgba(255, 255, 255, 0.55);
         position: fixed;
         bottom: 0;
         left: 0;
-        width: calc(100vw - 130px - 8.3333333333%);
+        width: calc(100vw - 130px);
         height: 65px;
         z-index: 1000;
         display: flex !important;
@@ -26,6 +25,7 @@ footer {
         justify-content: flex-start;
         align-items: center;
         padding-left: calc(8.3333333333%);
+        background-color: #ffffff;
     }
     footer a {
         text-align: center;

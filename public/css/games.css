@@ -1,0 +1,165 @@
+#games {
+    min-height: calc(100vh - 75px);
+    width: 100vw;
+}
+
+#games #desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#games #desc #desc-box{
+    position: relative;
+    height: 65vh;
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 50px;
+}
+
+#games #desc #desc-box h2{
+    font-family: Quicksand-b;
+    color: #262626;
+    font-size: 2.8rem;
+    position: relative;
+    margin-bottom: 35px;
+}
+
+#games #desc #desc-box h2::before{
+    content: ' ';
+    height: 25px;
+    width: 25px;
+    background-color: #FF4E4E;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: -35px;
+}
+
+.smash::before{background-color: #FF4E4E !important;}
+.dac::before{background-color: #6E99FC !important;}
+.thelane::before{background-color: #FBD262 !important;}
+
+#games #desc #desc-box p{
+    color: #505050;
+    font-family: Quicksand;
+    white-space: pre-line;
+    font-size: 1rem;
+}
+
+#games #desc #desc-il{
+    width: 200px;
+    position: absolute;
+    bottom: -75px;
+    right: -155px;
+}
+
+#games #img-ct {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-top: 75px;
+    position: relative;
+    height: calc(100vh - 75px);
+}
+
+#games #img-ct .img-g img {
+    height: 15vw;
+    transition: .3s all ease-in-out;
+    z-index: 100;
+}
+
+#games #img-ct .img-g {
+    height: 15vw;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#games #img-ct .img-g:hover img {
+    transform: scale(1.1) translateY(-25px);
+}
+
+#games #img-ct .img-g::before {
+    content: ' ';
+    height: 35px;
+    width: 35px;
+    background-color: #FF4E4E;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 101;
+}
+#games #img-ct #smash::before{background-color: #FF4E4E;}
+#games #img-ct #dac::before{background-color: #6E99FC;}
+#games #img-ct #thelane::before{background-color: #FBD262;}
+
+@media (max-width: 1670px) {
+    #games #desc #desc-box h2{
+        font-size: 2rem;
+    }
+    #games #desc #desc-box p{
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 1300px) {
+    #games #desc #desc-box p{
+        font-size: .7rem;
+    }
+    #games #img-ct .img-g::before {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #games #img-ct .img-g {
+        height: auto;
+    }
+    #games #img-ct .img-g::before {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    #games #img-ct .img-g::before {
+        height: 25px;
+        width: 25px;
+    }
+    #games #img-ct .img-g img {
+        height: 22vw;
+    }
+    #games #desc #desc-il{
+        display: none;
+    }
+    #games #desc {
+        min-height: 50vh;
+        height: auto;
+    }
+
+    #games #desc #desc-box{
+        margin-top: 75px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    #games #img-ct {
+        height: 25vh;
+    }
+    #games {
+        padding-bottom: 250px;
+    }
+}
