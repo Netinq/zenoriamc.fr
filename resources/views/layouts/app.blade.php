@@ -17,7 +17,7 @@
 
         <meta name='language' content='FR'>
         <meta name='target' content='all'>
-        <meta name='theme-color' content='#F26E20'>
+        <meta name='theme-color' content='#48BBE8'>
 
         <link rel='shortcut icon' type='image/png' href='{{ asset('images/logo.png') }}'>
         <link rel="apple-touch-icon" href="{{ asset('images/logo.png') }}" />
@@ -46,7 +46,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
         <title>
-            @hasSection('title') {{Config::get('app.name')}} : @yield('title')
+            @hasSection('title') {{Config::get('app.name')}} - @yield('title')
             @else ZenoriaMC Serveur Mini-Jeux 1.15.2 @endif
         </title>
 
@@ -74,8 +74,9 @@
     </head>
 
     <body class="row">
-        {{-- @include('layouts.header') --}}
+        @include('layouts.header')
         @yield('content')
         @include('layouts.footer')
     </body>
+    <script src="{{asset('js/header.js')}}"></script>
 </html>
