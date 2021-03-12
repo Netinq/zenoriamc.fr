@@ -19,4 +19,5 @@
 .legal p {
     color: #505050;
     font-family: Quicksand;
+    white-space: pre-line;
 }

@@ -160,7 +160,7 @@ header #nav-mobile .nav-btn{
     text-align: center !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     header #nav-mobile .nav-btn{
         margin-top: 7.5px;
         margin-bottom: 7.5px;
