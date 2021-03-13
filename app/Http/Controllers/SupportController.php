@@ -52,7 +52,8 @@ class SupportController extends Controller
     // GET Page du ticket
     public function show($id)
     {
-        //
+        //client : répond mode client
+        //admin  :
     }
 
     // PUT Mettre à jour une donné existante dans la DB
