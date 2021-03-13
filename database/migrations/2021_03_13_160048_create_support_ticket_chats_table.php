@@ -15,10 +15,12 @@ class CreateSupportTicketChatsTable extends Migration
     {
         Schema::create('support_ticket_chats', function (Blueprint $table) {
             $table->id(); // = bigInterger()->unsigned()
+            $table->bigInteger('ticket_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
             $table->string('message');
             $table->timestamps();
 
+            $table->foreign('ticket_id')->references('id')->on('support_tickets')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
