@@ -19,6 +19,7 @@ class CreateSupportTicketsTable extends Migration
             $table->bigInteger('type_id')->unsigned();
             $table->string('object');
             $table->text('content');
+            $table->boolean('isOpen');
             $table->tinyInteger('priority');
             $table->timestamps();
 

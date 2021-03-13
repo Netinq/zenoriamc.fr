@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\SupportTicket;
-use App\Models\supportTicketChat;
 use Illuminate\Http\Request;
 use App\Models\SupportType;
 use App\Models\SupportTicketChat;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class SupportController extends Controller
@@ -45,12 +45,13 @@ class SupportController extends Controller
         $ticket->priority = $request->priority;
         $ticket->object = $request->object;
         $ticket->content = $request->content;
+        $ticket->isOpen = true;
 
         $ticket->save();
 
         $ticketChat = new SupportTicketChat();
         $ticketChat->user_id = Auth::id();
-        $ticketChat->ticket_id = $ticket->id();
+        $ticketChat->ticket_id = $ticket->id;
         $ticketChat->message = $request->content;
 
         $ticketChat->save();
@@ -66,10 +67,23 @@ class SupportController extends Controller
 
         //si client != user id du ticket, on le vire (pas les perms de voir ce ticket)
         //get ticket à partir de l'id
-        $chats = SupportTicketChat::where('id','=',$id)::all();
+        $user = User::where('id','=',Auth::id())->first();
+        // $chats = SupportTicketChat::where('id',$id)::All();
+        $chats = SupportTicketChat::where('ticket_id', $id)->get();
 
-        return view('support.show',compact('chats'));
+        foreach ($chats as $chat) {
+            $temp_user = User::where('id', $chat->user_id)->first();
+            $chat->user = $temp_user;
+        }
 
+        $ticket = SupportTicket::where('id',$id)->first();
+
+        if($user->id==$ticket->user_id || $user->rank_power >= 310)
+        {
+            return view('support.show',compact('chats','user'));
+        } else {
+            return redirect()->route('home')->with('error', ['Erreur', 'Vous ne pouvez pas accéder à ce ticket']);;
+        }
     }
 
     // PUT Mettre à jour une donné existante dans la DB
