@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupportTicketsTable extends Migration
+class CreateProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateSupportTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('support_tickets', function (Blueprint $table) {
-            $table->id();
+        Schema::create('profiles', function (Blueprint $table) {
             $table->uuid('user_id');
-            $table->bigInteger('type_id')->unsigned();
-            $table->string('object');
-            $table->text('content');
-            $table->tinyInteger('priority');
+            $table->string('minecraft_name');
+            $table->boolean('minecraft_verified')->default(false);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('type_id')->references('id')->on('support_types')->onDelete('cascade');
         });
     }
 
@@ -34,6 +30,6 @@ class CreateSupportTicketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('support_tickets');
+        Schema::dropIfExists('profiles');
     }
 }
