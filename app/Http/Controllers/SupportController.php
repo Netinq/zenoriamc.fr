@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\SupportTicket;
 use Illuminate\Http\Request;
 use App\Models\SupportType;
+use App\Models\SupportTicketChat;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class SupportController extends Controller
@@ -43,8 +45,16 @@ class SupportController extends Controller
         $ticket->priority = $request->priority;
         $ticket->object = $request->object;
         $ticket->content = $request->content;
+        $ticket->isOpen = true;
 
         $ticket->save();
+
+        $ticketChat = new SupportTicketChat();
+        $ticketChat->user_id = Auth::id();
+        $ticketChat->ticket_id = $ticket->id;
+        $ticketChat->message = $request->content;
+
+        $ticketChat->save();
 
         return redirect()->route('home')->with('success', ['Votre ticket à été envoyé', 'Notre équipe d\'assistance se chargera de vous répondre dans des meilleurs délais !']);;
     }
@@ -52,7 +62,28 @@ class SupportController extends Controller
     // GET Page du ticket
     public function show($id)
     {
-        //
+        //client : répond mode client
+        //admin  : répond mode support
+
+        //si client != user id du ticket, on le vire (pas les perms de voir ce ticket)
+        //get ticket à partir de l'id
+        $user = User::where('id','=',Auth::id())->first();
+        // $chats = SupportTicketChat::where('id',$id)::All();
+        $chats = SupportTicketChat::where('ticket_id', $id)->get();
+
+        foreach ($chats as $chat) {
+            $temp_user = User::where('id', $chat->user_id)->first();
+            $chat->user = $temp_user;
+        }
+
+        $ticket = SupportTicket::where('id',$id)->first();
+
+        if($user->id==$ticket->user_id || $user->rank_power >= 310)
+        {
+            return view('support.show',compact('chats','user'));
+        } else {
+            return redirect()->route('home')->with('error', ['Erreur', 'Vous ne pouvez pas accéder à ce ticket']);;
+        }
     }
 
     // PUT Mettre à jour une donné existante dans la DB
