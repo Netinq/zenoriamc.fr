@@ -33,7 +33,7 @@ class Support extends Seeder
         ]);
 
         SupportType::firstOrCreate([
-            'tag' => 'serveur',
+            'tag' => 'server',
             'title' => 'Problème serveur',
             'description' => 'Divers problèmes avec le service.',
         ]);
