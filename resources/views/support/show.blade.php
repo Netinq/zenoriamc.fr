@@ -8,25 +8,25 @@
         @foreach ($chats as $chat)
             <!--Vue Support-->
             @if ($user->rank_power>=310)
-                @if($chat->user->rank_power>=310)
-                    <div class="right">
+                @if($chat->user->id == $user->id)
+                    <div class="left">
                         <!--Si msg.expediteur.power >= assistant-->
                         <p class="msg">{{$chat->message}}</p>
                     </div>
                 @else
-                    <div class="left">
+                    <div class="right">
                         <!--Si msg.expediteur.power >= assistant-->
                         <p class="msg">{{$chat->message}}</p>
                     </div>
                 @endif
             @else
-                @if($chat->user->rank_power<310)
-                    <div class="right">
+                @if($chat->user->id == $user->id)
+                    <div class="left">
                         <!--Si msg.expediteur.power >= assistant-->
                         <p class="msg">{{$chat->message}}</p>
                     </div>
                 @else
-                    <div class="left">
+                    <div class="right">
                         <!--Si msg.expediteur.power >= assistant-->
                         <p class="msg">{{$chat->message}}</p>
                     </div>
