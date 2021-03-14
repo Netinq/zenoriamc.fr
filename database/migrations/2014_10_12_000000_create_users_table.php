@@ -26,7 +26,6 @@ class CreateUsersTable extends Migration
             $table->foreign('rank_power')->references('power')->on('ranks')->onDelete('set null');
         });
     }
-
     /**
      * Reverse the migrations.
      *

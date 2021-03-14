@@ -30,7 +30,7 @@
             </a>
         </div>
         <div class="nav-flex-end">
-            <a href="#">
+            <a href="{{ route('login') }}">
                 <div class="nav-btn nav-btn-sec nav-flex-end">
                     Mon espace
                 </div>
@@ -61,7 +61,7 @@
                 Assistance
             </div>
         </a>
-        <a href="#">
+        <a href="{{ route('login') }}">
             <div class="nav-btn nav-btn-sec">
                 Mon espace
             </div>
