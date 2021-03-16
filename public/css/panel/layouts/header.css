@@ -1,0 +1,19 @@
+body {
+    background-color: #F5F6FB;
+}
+
+header {
+    height: 100px;
+    background-color: #FCFDFE;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+nav {
+    height: 100vw;
+    background-color: #FFFFFF;
+    position: fixed;
+    left: 0;
+    top: 0;
+}

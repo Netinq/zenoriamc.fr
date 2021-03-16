@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 class RouteServiceProvider extends ServiceProvider
 {
     public const HOME = '/';
-    public const PROFIL = '/profil';
+    public const PANEL = '/panel';
 
     public function boot()
     {
@@ -26,6 +26,11 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            Route::prefix('panel')
+                ->middleware('panel')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/panel.php'));
         });
     }
 

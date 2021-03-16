@@ -6,7 +6,6 @@
     <img alt="Landing" src="{{ asset('images/auth/l2.png') }}" class="landing" />
     <div class="offset-1 col-10 col-md-8 col-lg-6 col-xl-4 content">
         <div class="order-2 order-sm-1">
-
             <h1>Accéder à mon espace</h1>
             <p>Connectez-vous à votre espace en ligne.</p>
             <form method="POST" action="{{ route('login')}}" class="row">

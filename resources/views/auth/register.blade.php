@@ -5,6 +5,7 @@
     <img alt="Landing" src="{{ asset('images/auth/l1.png') }}" class="landing" />
     <img alt="Landing" src="{{ asset('images/auth/l2.png') }}" class="landing" />
     <div class="offset-1 col-10 col-md-8 col-lg-6 col-xl-4 content">
+        <div class="order-2 order-sm-1">
         <h1>Créer un compte</h1>
         <p>Accéder à toutes les fonctionnalitées du site.</p>
        @if($errors->any())
@@ -74,9 +75,11 @@
                 <img alt="Start button" src="{{asset('images/svg/go.svg')}}" />
             </button>
         </form>
-        <div class="change">
-            <p>OU</p>
+        </div>
+        <div class="change order-1 order-sm-2">
+            <p class="d-none d-sm-inline-block">OU</p>
             <a href="{{route('login')}}">Connexion à un compte</a>
+            <p class="d-sm-none d-inline-block">OU</p>
         </div>
     </div>
 </section>
