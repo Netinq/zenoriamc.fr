@@ -49,6 +49,107 @@ main {
     border-bottom: 2px solid #F5F6FB;
     margin: 0;
 }
+.box .content form {
+    padding-bottom: 60px;
+}
+.box .content .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+}
+input:focus, input.form-control:focus,textarea:focus, textarea.form-control:focus,select:focus, select.form-control:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.box .content .form-group label {
+    color: #505050;
+    font-family: Quicksand-b;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.box .content .form-group input {
+    background-color: #F5F6FB;
+    border: none !important;
+    outline: none !important;
+    font-family: Quicksand;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 40px;
+}
+
+.box .content .form-group select {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.box .content .form-group textarea {
+    background-color: #F5F6FB;
+    border: none !important;
+    outline: none !important;
+    font-family: Quicksand;
+    height: 100%;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 150px;
+}
+
+.box .content .form-group button {
+    background: rgb(80,201,201);
+    background: linear-gradient(140deg, rgba(80,201,201,1) 0%, rgba(71,186,235,1) 100%);
+    border: none;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 0 5px 5px 0;
+}
+.box .content form .btn-grad {
+    background: rgb(80,201,201);
+    background: linear-gradient(140deg, rgba(80,201,201,1) 0%, rgba(71,186,235,1) 100%);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .3s all ease-in-out;
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+}
+
+.box .content form .btn-grad:hover {
+    transform: scale(1.1);
+    background: linear-gradient(140deg, rgba(71,186,235,1) 0%, rgba(80,201,201,1) 100%);
+}
+
+.box .content form .btn img {
+    height: 25px;
+    margin-left: 2.5px;
+}
 .box .content .section {
     display: flex;
     flex-direction: column;

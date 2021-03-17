@@ -1,9 +1,19 @@
-@extends('layouts.app', ['styles' => ['support/show']])
-@section('title', 'Support msg')
+@extends('panel.layouts.app', ['styles' => ['support/show']])
 
 @section('content')
 @include('layouts.social')
-<section>
+<main class="offset-md-4 offset-xl-2 col-12 col-md-8 col-xl-10 row" id="home">
+    <div class="col-12 col-md-12 col-xl-8 box-grid">
+        <div class="box">
+            <div class="head">
+                <h3>Ma demande</h3>
+            </div>
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</main>
+{{-- <section>
     <div id='test'>
         @foreach ($chats as $chat)
             <!--Vue Support-->
@@ -35,5 +45,5 @@
         </div>
         @endforeach
     </div>
-</section>
+</section> --}}
 @endsection

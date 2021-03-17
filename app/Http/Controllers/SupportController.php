@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\SupportType;
 use App\Models\SupportTicketChat;
 use App\Models\User;
+use App\Models\Profile;
+use App\Models\Player;
+use App\Models\Rank;
 use Illuminate\Support\Facades\Auth;
 
 class SupportController extends Controller
@@ -26,14 +29,29 @@ class SupportController extends Controller
     public function create()
     {
         $types = SupportType::all();
-        return view('support.create', compact('types'));
+        $profil = Profile::where('user_id', Auth::id())->first();
+        if ($profil->player_id != null) {
+            $player = Player::where('uuid', $profil->player_id)->first();
+            $profil->rank  = Rank::where('power', $player->rank)->first();
+        } else {
+            $profil->rank = null;
+        }
+        return view('support.create', compact('types', 'profil'));
     }
 
     // GET Page formulaire contact
     public function createWithTag($tag)
     {
+        $types = SupportType::all();
         $type = SupportType::where('tag', $tag)->first();
-        return view('support.create', compact('type'));
+        $profil = Profile::where('user_id', Auth::id())->first();
+        if ($profil->player_id != null) {
+            $player = Player::where('uuid', $profil->player_id)->first();
+            $profil->rank  = Rank::where('power', $player->rank)->first();
+        } else {
+            $profil->rank = null;
+        }
+        return view('support.create', compact('type', 'types', 'profil'));
     }
 
     // POST Stocker donner dans DB
@@ -62,7 +80,7 @@ class SupportController extends Controller
 
         $ticketChat->save();
 
-        return redirect()->route('home')->with('success', ['Votre ticket à été envoyé', 'Notre équipe d\'assistance se chargera de vous répondre dans des meilleurs délais !']);;
+        return redirect()->route('panel.home')->with('success', ['Votre ticket à été envoyé', 'Notre équipe d\'assistance se chargera de vous répondre dans des meilleurs délais !']);;
     }
 
     // GET Page du ticket
@@ -84,9 +102,19 @@ class SupportController extends Controller
 
         $ticket = SupportTicket::where('id',$id)->first();
 
+        $profil = Profile::where('user_id', Auth::id())->first();
+        if ($profil->player_id != null) {
+            $player = Player::where('uuid',
+                $profil->player_id
+            )->first();
+            $profil->rank  = Rank::where('power', $player->rank)->first();
+        } else {
+            $profil->rank = null;
+        }
+
         if($user->id==$ticket->user_id || $user->rank_power >= 310)
         {
-            return view('support.show',compact('chats','user'));
+            return view('support.show',compact('chats','user', 'profil'));
         } else {
             return redirect()->route('home')->with('error', ['Erreur', 'Vous ne pouvez pas accéder à ce ticket']);;
         }

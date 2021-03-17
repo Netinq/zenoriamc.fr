@@ -20,8 +20,8 @@
         <img alt="ZenoriaMC's logo" src="{{asset('images/logo.png')}}">
     </div></a>
     <div id="nav-pl">
-        <a href="{{route('home')}}">
-        <div class="nav-pl-box {{ Route::is('home') ? 'selected' : '' }}">
+        <a href="{{route('panel.home')}}">
+        <div class="nav-pl-box {{ Route::is('panel.home') ? 'selected' : '' }}">
             <img alt="People icon" src="{{asset('images/panel/overide.svg')}}">
             Tableau de bord
         </div>

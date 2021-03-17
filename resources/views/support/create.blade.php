@@ -1,81 +1,88 @@
-@extends('layouts.app')
+@extends('panel.layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('assistance.store') }}">
-                        @csrf
-                        @if (isset($type))
-                            <input name="type_id" value="{{$type->id}}" hidden>
-                        @else
-                        <div class="form-group row">
-                            <label for="type_id" class="col-md-4 col-form-label text-md-right">Priorité</label>
-                            <div class="col-md-6">
-                                <select class="form-control" id="type_id @error('type_id') is-invalid @enderror" name="type_id">
-                                    @foreach ($types as $type)
-                                        <option
-                                        value="{{ $type->id }}"
-                                        {{ old('type_id') == $type->id ? "selected" : "" }}
-                                        >{{$type->title}}</option>
-                                    @endforeach
-                                </select>
-                                @error('type_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+@include('layouts.popup')
+<main class="offset-md-4 offset-xl-2 col-12 col-md-8 col-xl-10 row" id="home">
+    <div class="col-12 col-md-12 col-xl-8 box-grid">
+        <div class="box">
+            <div class="head">
+                <h3>Demande d'assistance</h3>
+            </div>
+            <div class="content">
+                <form method="POST" action="{{ route('assistance.store') }}">
+                    @csrf
+                     @if (isset($type))
+                        <div class="form-group">
+                            <label for="type_id">Type de demande</label>
+                            <select class="form-control" id="type_id @error('type_id') is-invalid @enderror" name="type_id">
+                                @foreach ($types as $new)
+                                    <option
+                                    value="{{ $new->id }}"
+                                    {{ $new->id == $type->id ? "selected" : "" }}
+                                    >{{$new->title}}</option>
+                                @endforeach
+                            </select>
+                            @error('type_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
-                        @endif
-                        <div class="form-group row">
-                            <label for="priority" class="col-md-4 col-form-label text-md-right">Priorité</label>
-                            <div class="col-md-6">
-                                <input id="priority" type="integer" class="form-control @error('priority') is-invalid @enderror" name="priority" value="{{ old('priority') }}" autocomplete="priority" autofocus>
-                                @error('priority')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="object" class="col-md-4 col-form-label text-md-right">Object</label>
-                            <div class="col-md-6">
-                                <input id="object" type="text" class="form-control @error('object') is-invalid @enderror" name="object" value="{{ old('object') }}" autocomplete="object" autofocus>
-                                @error('object')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="content" class="col-md-4 col-form-label text-md-right">Content</label>
-                            <div class="col-md-6">
-                                <input id="content" type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" autocomplete="content" autofocus>
-                                @error('content')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    SEND
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    @else
+                    <div class="form-group">
+                        <label for="type_id">Type de demande</label>
+                        <select class="form-control" id="type_id @error('type_id') is-invalid @enderror" name="type_id">
+                            @foreach ($types as $type)
+                                <option
+                                value="{{ $type->id }}"
+                                {{ old('type_id') == $type->id ? "selected" : "" }}
+                                >{{$type->title}}</option>
+                            @endforeach
+                        </select>
+                        @error('type_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    @endif
+                    <div class="form-group">
+                        <label for="priority">Priorité</label>
+                        <select class="form-control" id="priority @error('priority') is-invalid @enderror" name="priority">
+                            <option value=1 >Peu urgente</option>
+                            <option value=5 selected>Normale</option>
+                            <option value=10 >Urgente</option>
+                        </select>
+                        @error('priority')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                     <div class="form-group">
+                        <label for="object">Objet (description courte)</label>
+                        <input id="object" type="text" class="form-control @error('object') is-invalid @enderror" name="object" value="{{ old('object') }}" autocomplete="object" autofocus>
+                        @error('object')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                     <div class="form-group">
+                        <label for="content">Description de la demande</label>
+                        <textarea id="content" type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" autocomplete="content"></textarea>
+                        @error('content')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-grad form-sub">
+                        <img alt="Start button" src="{{asset('images/panel/send.svg')}}" />
+                    </button>
+                </form>
             </div>
         </div>
     </div>
-</div>
+</main>
 @endsection

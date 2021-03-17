@@ -20,7 +20,9 @@ class PanelController extends Controller
 
         $user = User::where('id', Auth::id())->first();
         $profil = Profile::where('user_id', Auth::id())->first();
-        $tickets = SupportTicket::where('user_id', Auth::id())->get();
+        $tickets = SupportTicket::where('user_id', Auth::id())
+            ->orderBy('isOpen', 'desc')
+            ->get();
         $tickets_end = SupportTicket::where('user_id', Auth::id())->where('isOpen', false)->get();
         $tickets_in = SupportTicket::where('user_id', Auth::id())->where('isOpen', true)->get();
 
