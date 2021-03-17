@@ -9,6 +9,16 @@
 }
 
 @font-face {
+   font-family: Quicksand-bb;
+   src: url(../fonts/Quicksand-SemiBold.ttf);
+}
+
+@font-face {
+   font-family: Quicksand-bbb;
+   src: url(../fonts/Quicksand-Bold.ttf);
+}
+
+@font-face {
    font-family: Quicksand-l;
    src: url(../fonts/Quicksand-Light.ttf);
 }

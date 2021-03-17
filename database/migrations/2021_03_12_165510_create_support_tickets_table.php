@@ -19,8 +19,8 @@ class CreateSupportTicketsTable extends Migration
             $table->bigInteger('type_id')->unsigned();
             $table->string('object');
             $table->text('content');
-            $table->boolean('isOpen');
-            $table->tinyInteger('priority');
+            $table->boolean('isOpen')->default(true);
+            $table->tinyInteger('priority')->default(5);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

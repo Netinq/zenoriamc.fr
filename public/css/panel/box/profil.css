@@ -1,0 +1,78 @@
+#profil .field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
+#profil .field span {
+    color: #ACAFBC;
+    font-family: Quicksand-bb;
+    font-size: .8rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#profil .field p {
+    color: #505050;
+    font-family: Quicksand;
+    font-size: 1.2rem;
+    margin-top: -7.5px;
+}
+
+#profil .field p .code {
+    background-color: #F5F6FB;
+    padding: 5px;
+    color:#505050;
+    font-size: .8rem;
+}
+
+#profil .form {
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    height: 35px;
+}
+
+#profil .field input {
+    background-color: #F5F6FB;
+    border: none !important;
+    outline: none !important;
+    font-family: Quicksand;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#profil .field .red {
+    margin-top: 2.5px;
+    color: #E97171;
+    font-size: 1rem;
+}
+
+#profil .form button {
+    background: rgb(80,201,201);
+    background: linear-gradient(140deg, rgba(80,201,201,1) 0%, rgba(71,186,235,1) 100%);
+    border: none;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 0 5px 5px 0;
+}
+
+#profil .form button img {
+    width: 15px;
+}
+
+#profil .field input::placeholder {
+    color: #ACAFBC;
+    font-size: .8rem;
+}

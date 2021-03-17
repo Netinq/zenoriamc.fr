@@ -10,7 +10,28 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('assistance.store') }}">
                         @csrf
-                        <input name="type_id" value="{{$type->id}}" hidden>
+                        @if (isset($type))
+                            <input name="type_id" value="{{$type->id}}" hidden>
+                        @else
+                        <div class="form-group row">
+                            <label for="type_id" class="col-md-4 col-form-label text-md-right">Priorité</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="type_id @error('type_id') is-invalid @enderror" name="type_id">
+                                    @foreach ($types as $type)
+                                        <option
+                                        value="{{ $type->id }}"
+                                        {{ old('type_id') == $type->id ? "selected" : "" }}
+                                        >{{$type->title}}</option>
+                                    @endforeach
+                                </select>
+                                @error('type_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        @endif
                         <div class="form-group row">
                             <label for="priority" class="col-md-4 col-form-label text-md-right">Priorité</label>
                             <div class="col-md-6">

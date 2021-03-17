@@ -77,6 +77,6 @@
         @include('layouts.header')
         @yield('content')
         @include('layouts.footer')
+        <script src="{{asset('js/header.js')}}"></script>
     </body>
-    <script src="{{asset('js/header.js')}}"></script>
 </html>

@@ -30,7 +30,7 @@ header nav .nav-flex-start {
     align-items: center;
 }
 
-header nav #nav-lg {
+header nav .nav-lg {
     height: 40px;
     margin-right: 25px;
 }
@@ -105,7 +105,7 @@ header .head-mobile {
     align-items: center;
 }
 
-header .head-mobile #nav-lg {
+header .head-mobile .nav-lg {
     height: 40px;
     margin-right: 0;
 }
@@ -127,7 +127,7 @@ header .head-mobile .nav-bg {
     margin: 0;
 }
 
-header #nav-mobile #nav-lg {
+header #nav-mobile .nav-lg {
     height: 40px;
     margin-right: 0;
     margin: 0;

@@ -14,11 +14,12 @@ class CreateProfilesTable extends Migration
     public function up()
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->uuid('user_id');
+            $table->uuid('user_id')->primary();
             $table->uuid('player_id')->nullable();
-            $table->string('minecraft_name');
+            $table->string('minecraft_name')->nullable();
             $table->boolean('minecraft_verified')->default(false);
-            $table->string('minecraft_code');
+            $table->string('minecraft_code')->nullable();
+            $table->text('minecraft_head')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

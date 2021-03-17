@@ -1,7 +1,7 @@
 <header class="row" id="header">
     <div class="offset-1 col-10 nav-mobile head-mobile">
         <a href="{{ route('home') }}">
-            <img alt="Logo" src="{{ asset('images/logo.png') }}" id="nav-lg"/>
+            <img alt="Logo" src="{{ asset('images/logo.png') }}" class="nav-lg"/>
         </a>
         <div id="nav-bg-ct" onclick="displayNav()">
             <img alt="Burger menu" src="{{ asset('images/svg/burger.svg') }}" class="nav-bg" id="nav-bg"/>
@@ -11,7 +11,7 @@
     <nav class="offset-1 col-10" id="nav-desktop">
         <div class="nav-flex-start">
             <a href="{{ route('home') }}">
-                <img alt="Logo" src="{{ asset('images/logo.png') }}" id="nav-lg"/>
+                <img alt="Logo" src="{{ asset('images/logo.png') }}" class="nav-lg"/>
             </a>
             <a href="{{ route('home') }}">
                 <div class="nav-btn {{ Route::is('home') ? 'nav-btn-select' : '' }}">
@@ -44,7 +44,7 @@
     </nav>
     <nav class="hide" id="nav-mobile">
         <a href="{{ route('home') }}">
-            <img alt="Logo" src="{{ asset('images/logo.png') }}" id="nav-lg"/>
+            <img alt="Logo" src="{{ asset('images/logo.png') }}" class="nav-lg"/>
         </a>
         <a href="{{ route('home') }}">
             <div class="nav-btn">

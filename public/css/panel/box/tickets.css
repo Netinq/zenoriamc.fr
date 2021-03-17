@@ -1,0 +1,40 @@
+#tickets .head {
+    margin: 0;
+}
+
+#tickets .content .table {
+    justify-content: space-between;
+}
+
+#tickets .content .table .section .tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+#tickets .content .table .section .tags > div {
+    padding: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    background-color: #F5F6FB;
+    color:#ACAFBC ;
+    font-size: .8rem;
+    font-family: Quicksand;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+#tickets .content .table .section .button {
+    background-color: #F5F6FB;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+}

@@ -51,6 +51,7 @@
 
         @hasSection('noMaster') @else
         <link rel="stylesheet" type="text/css" href="{{ asset('css/master.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/panel/master.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}">
         @endif
 
@@ -71,5 +72,6 @@
         @include('panel.layouts.header')
         @yield('content')
     </body>
-    <script src="{{asset('js/header.js')}}"></script>
+    <script src="{{asset('js/panel.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 </html>

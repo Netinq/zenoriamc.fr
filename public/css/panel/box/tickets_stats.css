@@ -1,0 +1,49 @@
+.ti-st {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 25px;
+}
+
+.ti-st-il {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-right: 10px;
+}
+
+.ti-st-il img {
+    height: 45px;
+}
+
+@media (max-width: 781px) {
+    .ti-st-il img {
+        height: 40px;
+    }
+}
+
+.ti-st-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.ti-st-txt h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-family: Quicksand-bb;
+    color: #505050;
+}
+
+.ti-st-txt p {
+    margin: 0;
+    font-size: .9rem;
+    font-family: Quicksand;
+    color: #505050;
+}

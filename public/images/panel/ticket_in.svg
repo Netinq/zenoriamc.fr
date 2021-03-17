@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="86" height="86" viewBox="0 0 86 86">
+  <g id="ticket_in" transform="translate(-909 -168)">
+    <circle id="Ellipse_135" data-name="Ellipse 135" cx="43" cy="43" r="43" transform="translate(909 168)" fill="#f2d3b7"/>
+    <g id="Icon_feather-help-circle" data-name="Icon feather-help-circle" transform="translate(931.033 190.002)">
+      <path id="Tracé_605" data-name="Tracé 605" d="M44.98,23.99A20.99,20.99,0,1,1,23.99,3,20.99,20.99,0,0,1,44.98,23.99Z" transform="translate(-3 -3)" fill="none" stroke="#ab7160" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Tracé_606" data-name="Tracé 606" d="M13.635,14.7a6.3,6.3,0,0,1,12.237,2.1c0,4.2-6.3,6.3-6.3,6.3" transform="translate(1.247 -0.008)" fill="none" stroke="#ab7160" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Tracé_607" data-name="Tracé 607" d="M18,25.5h0" transform="translate(2.99 5.985)" fill="none" stroke="#ab7160" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

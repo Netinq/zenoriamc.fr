@@ -23,8 +23,14 @@ class SupportController extends Controller
         return view('support.index', compact('types'));
     }
 
+    public function create()
+    {
+        $types = SupportType::all();
+        return view('support.create', compact('types'));
+    }
+
     // GET Page formulaire contact
-    public function create($tag)
+    public function createWithTag($tag)
     {
         $type = SupportType::where('tag', $tag)->first();
         return view('support.create', compact('type'));

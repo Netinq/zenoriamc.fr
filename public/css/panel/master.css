@@ -1,0 +1,88 @@
+main {
+    margin: 0 ;
+    margin-top: 75px;
+    padding: 0;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.box {
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    padding: 0;
+}
+.box-grid {
+    padding: 15px;
+}
+.box .head {
+    position: relative;
+    height: 65px;
+    border-bottom: 2px solid #F5F6FB;
+    margin-bottom: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+.box h3 {
+    margin: 0;
+    margin-left: 50px;
+    color: #505050;
+    font-family: Quicksand-bb;
+    font-size: 1.4rem;
+}
+.box .content {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.box .content .table {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    border-bottom: 2px solid #F5F6FB;
+    margin: 0;
+}
+.box .content .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+.box .content .table p {
+    margin: 0;
+    color: #505050;
+    font-family: Quicksand;
+    font-size: 1rem;
+}
+
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+}
+
+img {
+  pointer-events: none;
+}
+
+@media (min-width: 1400px) {
+    .col-xl-4 {
+        flex: 0 0 calc((100vw / 12) * 3) !important;
+        max-width: calc((100vw / 12) * 3) !important;
+    }
+    .col-xl-8 {
+        flex: 0 0 calc((100vw / 12) * 6) !important;
+        max-width: calc((100vw / 12) * 6) !important;
+    }
+}
