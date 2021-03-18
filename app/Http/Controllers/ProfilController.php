@@ -38,17 +38,17 @@ class ProfilController extends Controller
     public function update(Request $request, $id)
     {
         if ($id != Auth::id()) {
-            return redirect()->route('home')->with('error', ['Erreur de requête', 'Permission error']);
+            return redirect()->route('panel.home')->with('error', ['Erreur de requête', 'Permission error']);
         }
 
         if ($request->minecraft_name == null) {
-            return redirect()->route('home')->with('error', ['Erreur de requête', 'Veuillez remplir le champs "compte minecraft"']);
+            return redirect()->route('panel.home')->with('error', ['Erreur de requête', 'Veuillez remplir le champs "compte minecraft"']);
         }
 
         $player = Player::where('name', $request->minecraft_name)->first();
 
         if ($player == null) {
-            return redirect()->route('home')->with('error', ['Erreur de requête', 'Pas de compte minecraft trouvé à ce nom.']);
+            return redirect()->route('panel.home')->with('error', ['Erreur de requête', 'Pas de compte minecraft trouvé à ce nom.']);
         }
 
         $profil = Profile::where('user_id', $id)->first();
@@ -58,7 +58,7 @@ class ProfilController extends Controller
         $profil->player_id = $player->uuid;
         $profil->save();
 
-        return redirect()->route('home')->with('success', ['Profile mis à jour', 'Votre profile vient d\'être mis à jour']);
+        return redirect()->route('panel.home')->with('success', ['Profile mis à jour', 'Votre profile vient d\'être mis à jour']);
     }
 
     public function destroy($id)

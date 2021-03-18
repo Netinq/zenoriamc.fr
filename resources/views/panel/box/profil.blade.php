@@ -41,7 +41,7 @@
 <script>
 function copy() {
   const el = document.createElement('textarea');
-  el.value = {!! json_encode($profil->minecraft_code) !!};
+  el.value = '/verify '+{!! json_encode($profil->minecraft_code) !!};
   document.body.appendChild(el);
   el.select();
   document.execCommand('copy');
