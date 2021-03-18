@@ -1,7 +1,7 @@
 <div class="col-12 col-md-12 col-xl-8 box-grid">
     <div class="box ti" id="tickets">
         <div class="head">
-            <h3>Mes demandes</h3>
+            <h3>{{$title}}</h3>
         </div>
         <div class="content">
         @foreach ($tickets as $ticket)

@@ -1,9 +1,16 @@
 main {
-    margin: 0 ;
+    margin: 0;
     margin-top: 75px;
+    margin-right: 0 !important;
     padding: 0;
     align-items: flex-start;
     align-content: flex-start;
+}
+
+@media (max-width: 767px) {
+    main {
+        margin-left: 0 !important;
+    }
 }
 
 .box {
@@ -12,7 +19,55 @@ main {
     border-radius: 15px;
     padding: 0;
 }
+.box .fullarea {
+    border: none;
+    margin: 25px;
+    height: 100px;
+    width: calc(100% - 50px);
+}
+.box-flat {
+    border-radius: 15px;
+    padding: 0;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    min-height: 75px;
+}
+.box-flat span{
+    padding: 5px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: Quicksand;
+    font-size: 1.1rem;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.box-flat img{
+    height:100%;
+    max-height: 150px;
+    max-width: 40%;
+    position: absolute;
+    bottom: 15%;
+    right: 15px;
+    transition: .3s all;
+}
+.box-flat:hover {
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.2);
+}
+.box-flat:hover img {
+    transform: scale(1.1);
+}
+.box-red {background-color: #E97171; }
+.box-red span {background-color: #C14444;}
+.box-aqua {background-color: #4FC8CC; }
+.box-aqua span {background-color: #43BCBC;}
+.box-purple {background-color: #8680DF; }
+.box-purple span {background-color: #968FFF;}
 .box-grid {
+    border: none;
+    background: none;
     padding: 15px;
 }
 .box .head {
@@ -37,6 +92,7 @@ main {
 .box .content {
     padding-left: 50px;
     padding-right: 50px;
+    position: relative;
 }
 .box .content .table {
     padding-top: 15px;
@@ -51,6 +107,47 @@ main {
 }
 .box .content form {
     padding-bottom: 60px;
+}
+.box .content h4 {
+    margin: 0;
+    color: #505050;
+    font-family: Quicksand-bb;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+.box .content h4 img {
+    height: 20px;
+    margin-right: 15px;
+}
+.box .content p {
+    margin: 0;
+    margin-top: 15px;
+    color: #505050;
+    font-family: Quicksand-b;
+    font-size: .8rem;
+    margin-bottom: 25px;
+}
+.box .content .signed {
+    margin: 0;
+    margin-top: 15px;
+    color: #ACAFBC;
+    font-family: Quicksand;
+    font-size: 1rem;
+    position: absolute;
+    right: 50px;
+    bottom: 15px;
+}
+.box .content .signed::before {
+    content: ' ';
+    height: 2px;
+    width: 8px;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: -13px;
+    background-color: #ACAFBC;
 }
 .box .content .form-group {
     display: flex;
@@ -185,5 +282,12 @@ img {
     .col-xl-8 {
         flex: 0 0 calc((100vw / 12) * 6) !important;
         max-width: calc((100vw / 12) * 6) !important;
+    }
+    .col-xl-7 {
+        flex: 0 0 calc((100vw / 12) * 5) !important;
+        max-width: calc((100vw / 12) * 5) !important;
+    }
+    .offset-xl-1 {
+        margin-left: calc((100vw / 12) * 1) !important;
     }
 }

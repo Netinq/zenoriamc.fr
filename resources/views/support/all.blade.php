@@ -1,4 +1,4 @@
-@extends('panel.layouts.app', ['styles' => ['home', 'box/profil', 'box/tickets', 'box/tickets_stats']])
+@extends('panel.layouts.app', ['styles' => ['home', 'box/tickets', 'box/tickets_stats']])
 
 @section('content')
 @include('layouts.popup')
@@ -16,8 +16,7 @@
     ])
     </div>
     <div class="col-12 row">
-        @include('panel.box.tickets', ['tickets' => $tickets, 'title' => 'Mes demandes'])
-        @include('panel.box.profil')
+        @include('panel.box.tickets', ['tickets' => $tickets, 'title' => 'Demandes à traiter'])
     </div>
 </main>
 @endsection

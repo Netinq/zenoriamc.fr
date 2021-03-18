@@ -5,7 +5,7 @@
     </div>
     <div id="hd-pr" onclick="displayDrop()">
         <img alt="Profil picture" src="{{ $profil->minecraft_head != null ? $profil->minecraft_head : asset('images/meta.png') }}" id="hd-pr-pp">
-        <p>K_Dev</p>
+        <p>{{$user->name}}</p>
         <img alt="Arrow" src="{{asset('images/svg/arrow.svg')}}" id="hd-pr-ar">
         <div id="hd-pr-drop" class="hide box">
             <form method="POST" action="{{ route('logout') }}">
@@ -35,10 +35,12 @@
     </div>
     @if ($profil->minecraft_verified && $profil->rank->power >= 310)
     <div id="nav-ad">
+        <a href="{{route('assistance.all')}}">
         <div class="nav-ad-box">
             <img alt="Support icon" src="{{asset('images/panel/support.svg')}}">
             Support
         </div>
+        </a>
         <div class="nav-ad-box">
             <img alt="People icon" src="{{asset('images/panel/overide.svg')}}">
             Minecraft

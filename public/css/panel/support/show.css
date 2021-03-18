@@ -1,0 +1,64 @@
+#show {
+    padding-top: 25px;
+}
+#show .box .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    padding: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#show .box .content h1 {
+    margin: 0;
+    color: #505050 ;
+    font-family: Quicksand;
+    font-size: 1.6rem;
+}
+
+#show .content .tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+#show .content .tags > div {
+    padding: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    background-color: #F5F6FB;
+    color:#ACAFBC ;
+    font-size: .8rem;
+    font-family: Quicksand;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+#show .chats {
+    width: 66.6666666667%;
+    margin-left: 15px !important;
+    padding-right: 20px;
+}
+
+@media (min-width: 1400px) {
+    #show .chats {
+        width: calc((100vw / 12) * 6);
+        margin-left: 15px !important;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 1199px) {
+    #show .chats {
+        width: calc((100vw / 12) * 12);
+        margin-left: 15px !important;
+        padding-right: 0;
+    }
+    #compte {
+        margin-left: 15px;
+    }
+}

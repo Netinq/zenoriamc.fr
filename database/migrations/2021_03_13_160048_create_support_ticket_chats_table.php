@@ -17,7 +17,7 @@ class CreateSupportTicketChatsTable extends Migration
             $table->id(); // = bigInterger()->unsigned()
             $table->bigInteger('ticket_id')->unsigned();
             $table->uuid('user_id');
-            $table->string('message');
+            $table->text('message');
             $table->timestamps();
 
             $table->foreign('ticket_id')->references('id')->on('support_tickets')->onDelete('cascade');

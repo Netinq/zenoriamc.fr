@@ -1,21 +1,13 @@
-.msg
-{
-
-
+#show .box .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
 }
-
-.left
-{
-    width:500px;
-    border: 15px solid black;
-    padding: 50px;
-    margin: 20px;
-}
-
-.right
-{
-    width:500px;
-    border: 15px solid blue;
-    padding: 50px;
-    margin: 20px 20px 20px 50px;
+#show .box .content h1 {
+    margin: 0;
+    color: #505050 !important;
+    font-family: Quicksand;
+    font-size: 2rem;
 }
