@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class SupportTicketChat extends Model
 {
     use HasFactory;
+
+    //FIX
 }
