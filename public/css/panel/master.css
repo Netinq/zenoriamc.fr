@@ -129,6 +129,7 @@ main {
     font-family: Quicksand-b;
     font-size: .8rem;
     margin-bottom: 25px;
+    white-space: pre-wrap;
 }
 .box .content .signed {
     margin: 0;
