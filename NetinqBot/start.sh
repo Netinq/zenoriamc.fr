@@ -1,0 +1,1 @@
+screen -dmS "NetinqBot - VoiceChannel"  node index.js
